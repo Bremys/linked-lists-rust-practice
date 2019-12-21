@@ -77,7 +77,7 @@ mod test {
 
     #[test]
     fn test_sizes() {
-        let list: &mut List<i32> = &mut List::new();
+        let mut list = List::new();
         list.push(1);
         list.push(2);
         list.push(3);
@@ -94,13 +94,13 @@ mod test {
 
     #[test]
     fn test_pop_empty() {
-        let empty_list: &mut List<i32> = &mut List::new();
+        let mut empty_list: List<i32> = List::new();
         assert_eq!(empty_list.pop(), None)
     }
 
     #[test]
     fn test_push_pops() {
-        let list = &mut List::new();
+        let mut list = List::new();
         list.push(32);
         list.push(40);
         assert_eq!(list.pop(), Some(40));
